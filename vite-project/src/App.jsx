@@ -1,15 +1,15 @@
-// import { Inicial } from "./pages";
-// import { Cabecalho, Conteudo, Rodape } from "./components";
-
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./Router";
+import { AppContextProvider } from "./contexts/AppContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Router></Router>
-    </BrowserRouter>
+    <AppContextProvider>
+      <BrowserRouter>
+        <Router></Router>
+      </BrowserRouter>
+    </AppContextProvider>
   );
 }
 

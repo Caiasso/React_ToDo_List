@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { Cabecalho, Conteudo, Rodape } from "../../components";
-// import { Inicial } from "../../pages";
+import { useAppContext } from "../../hooks";
 
 const LayoutPadrao = () => {
+  const { criador } = useAppContext();
   return (
     <>
       <Cabecalho nomeUsuario="Guilherme" />
       <Conteudo>
         <Outlet />
       </Conteudo>
-      <Rodape criador="Caiasso" />
+      <Rodape criador={criador} />
     </>
   );
 };
